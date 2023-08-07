@@ -165,6 +165,15 @@ const Overlay = styled.div`
 `;
 
 export default function Banner() {
+  const handleClickVagas = () => {
+    const phoneNumber = "554796962719";
+    const message = encodeURIComponent(
+      "Olá estou interessado em saber mais sobre as vagas de muay thai..."
+    ); // Codifica a mensagem para que caracteres especiais sejam tratados corretamente
+    const link = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+    window.open(link, "_blank");
+  };
   return (
     <>
       <BannerContainer>
@@ -186,7 +195,7 @@ export default function Banner() {
               </div>
               <div>
                 {/* Botão "Vagas" */}
-                <ButtonInter>Vagas</ButtonInter>
+                <ButtonInter onClick={handleClickVagas}>Vagas</ButtonInter>
               </div>
             </TextContainer>
           </TextContent>
