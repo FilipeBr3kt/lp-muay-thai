@@ -147,8 +147,37 @@ const Message = styled.a`
 `;
 
 export default function Plans() {
+  const handleClickDuplaWhatsapp = () => {
+    const phoneNumber = "554796962719";
+    const message = encodeURIComponent(
+      "Oi! Decidimos fazer o Plano em Dupla de Muay Thai juntos. Estamos empolgados para começar essa jornada e nos motivar mutuamente. Queremos saber mais sobre os horários disponíveis para duplas, os benefícios exclusivos desse plano e como podemos agendar nossas primeiras aulas. Aguardamos seu retorno. Obrigado!"
+    ); // Codifica a mensagem para que caracteres especiais sejam tratados corretamente
+    const link = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+    window.open(link, "_blank");
+  };
+
+  const handleClickIndividualWhatsapp = () => {
+    const phoneNumberindividual = "554796962719";
+    const messagein = encodeURIComponent(
+      "Olá! Escolhi o Plano Individual de Muay Thai e estou muito animado(a) para começar! Gostaria de saber mais detalhes sobre horários disponíveis, valores e como proceder para agendar a primeira aula. Aguardo seu retorno. Obrigado(a)!"
+    ); // Codifica a mensagem para que caracteres especiais sejam tratados corretamente
+    const link = `https://api.whatsapp.com/send?phone=${phoneNumberindividual}&text=${messagein}`;
+
+    window.open(link, "_blank");
+  };
+
+  const handlerGrupoWhatsappp = () => {
+    const phoneNumbergrupo = "554796962719";
+    const messagegru = encodeURIComponent(
+      "Olá! Optamos pelo Plano em Grupo de Muay Thai. Mal podemos esperar para treinar em equipe e criar um ambiente divertido e desafiador. Gostaríamos de obter mais informações sobre a quantidade de pessoas no grupo, a dinâmica das aulas em grupo e como podemos garantir nossas vagas. Ansiamos pelo seu retorno. Obrigado!"
+    ); // Codifica a mensagem para que caracteres especiais sejam tratados corretamente
+    const link = `https://api.whatsapp.com/send?phone=${phoneNumbergrupo}&text=${messagegru}`;
+
+    window.open(link, "_blank");
+  };
   return (
-    <ContainerPlans>
+    <ContainerPlans id="plans">
       <TextGrade>
         <h4>Preços</h4>
         <h2>Planos de preços para equipes de todos os tamanhos</h2>
@@ -169,9 +198,12 @@ export default function Plans() {
               <PlansOptions>Planos mensais</PlansOptions>
               <PlansOptions>Planos trimestrais</PlansOptions>
             </CheckedGrade>
-            <Message href="https://whats.link/planodupla" target="_blank">
-              <PlansButton className="sideButton">Ver planos</PlansButton>
-            </Message>
+            <PlansButton
+              onClick={handleClickDuplaWhatsapp}
+              className="sideButton"
+            >
+              Ver planos
+            </PlansButton>
           </div>
         </PlansSide>
         <PlanMid>
@@ -186,9 +218,12 @@ export default function Plans() {
               <PlansOptions>Planos trimestrais</PlansOptions>
               <PlansOptions>Plano de 10 aulas</PlansOptions>
             </CheckedGrade>
-            <Message href="https://whats.link/planosolo" target="_blank">
-              <PlansButton className="midButton">Ver planos</PlansButton>
-            </Message>
+            <PlansButton
+              onClick={handleClickIndividualWhatsapp}
+              className="midButton"
+            >
+              Ver planos
+            </PlansButton>
           </div>
         </PlanMid>
         <PlansSide className="planRight">
@@ -202,9 +237,9 @@ export default function Plans() {
               <PlansOptions>Planos mensais</PlansOptions>
               <PlansOptions>Planos trimestrais</PlansOptions>
             </CheckedGrade>
-            <Message href="https://whats.link/planogrupo" target="_blank">
-              <PlansButton className="sideButton">Ver planos</PlansButton>
-            </Message>
+            <PlansButton onClick={handlerGrupoWhatsappp} className="sideButton">
+              Ver planos
+            </PlansButton>
           </div>
         </PlansSide>
       </PlansGrade>

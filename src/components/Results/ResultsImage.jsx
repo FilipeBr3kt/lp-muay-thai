@@ -72,7 +72,7 @@ const ImageTwo = styled.img`
 
 export default function ResultsImage() {
   return (
-    <Container>
+    <Container id="results">
       <GradeItems>
         <h4>Resultados</h4>
         <h2>Em busca da sua melhor versão</h2>

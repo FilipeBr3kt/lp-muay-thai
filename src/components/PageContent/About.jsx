@@ -61,7 +61,7 @@ const ContainerAbout = styled.section`
 
 export default function About() {
   return (
-    <ContainerAbout>
+    <ContainerAbout id="about">
       <div>
         <h1>
           <FontAwesomeIcon icon={faQuoteRight} /> Francisco Bruto

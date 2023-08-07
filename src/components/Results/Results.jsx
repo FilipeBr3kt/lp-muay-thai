@@ -20,7 +20,7 @@ const ContainerTitle = styled.article`
 
 export default function Results() {
   return (
-    <ContainerResults>
+    <ContainerResults id="beneficies">
       <ContainerTitle>
         <h4>Benefícios</h4>
       </ContainerTitle>

@@ -160,24 +160,35 @@ export default function Header() {
     {
       icons: faChartSimple,
       text: "Resultados",
+      path: "results",
       id: 1,
     },
     {
       icons: faBook,
-      text: "Consultoria",
+      text: "Sobre",
+      path: "about",
       id: 2,
     },
     {
       icons: faCheck,
       text: "Planos",
+      path: "plans",
       id: 3,
     },
     {
       icons: faPlus,
       text: "Benefícios",
+      path: "beneficies",
       id: 4,
     },
   ];
+
+  const handleClickWhatsapp = () => {
+    const phoneNumber = "554796962719";
+    const link = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+
+    window.open(link, "_blank");
+  };
 
   return (
     <HeaderSty>
@@ -190,7 +201,7 @@ export default function Header() {
           {itemsData.map((item) => (
             <List key={item.id}>
               <StyledIconsList icon={item.icons} />
-              <ListItems href="#">{item.text}</ListItems>
+              <ListItems href={`#${item.path}`}>{item.text}</ListItems>
             </List>
           ))}
         </Unlist>
@@ -199,9 +210,7 @@ export default function Header() {
         <a href="https://www.instagram.com/gomes_bruto/" target="__blank">
           <StyledIcons icon={faInstagram} />
         </a>
-        <a href="https://whats.link/thaybruto" target="_blank">
-          <StyledIcons icon={faWhatsapp} />
-        </a>
+        <StyledIcons icon={faWhatsapp} onClick={handleClickWhatsapp} />
       </FlexBox>
     </HeaderSty>
   );

@@ -78,7 +78,7 @@ export default function ButtonsMedia() {
       icons: faWhatsapp,
       id: 2,
       text: "Whatsapp",
-      path: "https://whats.link/thaybruto",
+      path: "https://api.whatsapp.com/send?phone=554796962719",
     },
     {
       icons: faTelegram,

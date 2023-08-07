@@ -7,6 +7,7 @@ import WhoI from "./components/PageContent/WhoI";
 import Results from "./components/Results/Results";
 import Footer from "./components/PageContent/Footer";
 import { GlobalStyle } from "./components/UI/GlobalStyles";
+import ButtonTop from "./components/PageContent/ButtonTop";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <About />
       <Plans />
       <Results />
+      <ButtonTop />
       <Footer />
     </>
   );
